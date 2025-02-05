@@ -7,7 +7,7 @@ class DiaryView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Color.fromARGB(188, 13, 185, 248),
+      backgroundColor: Color.fromARGB(188, 14, 185, 248),
       body: SingleChildScrollView(
         child: Column(
           children: [
@@ -27,7 +27,7 @@ class DiaryView extends StatelessWidget {
                   children: [
                     Padding(
                       padding: EdgeInsets.symmetric(
-                        horizontal: 15.sp,
+                        horizontal: 14.9.sp,
                         vertical: 10.sp,
                       ),
                       child: Row(
