@@ -8,6 +8,7 @@ class DiaryView extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Color.fromARGB(188, 14, 185, 248),
+      // appBar: AppBar(),
       body: SingleChildScrollView(
         child: Column(
           children: [
