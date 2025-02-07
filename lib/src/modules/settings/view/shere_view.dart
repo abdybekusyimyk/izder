@@ -9,8 +9,12 @@ class ShereView extends StatelessWidget {
       appBar: AppBar(
         title: Text('Share'),
       ),
-      body: Center(
-        child: Text('Share'),
+      body: Column(
+        children: [
+          Center(
+            child: Text('Share'),
+          ),
+        ],
       ),
     );
   }
