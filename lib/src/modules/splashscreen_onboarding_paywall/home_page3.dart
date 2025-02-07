@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:izder/src/components/nabbar_view.dart';
 import 'package:izder/src/modules/splashscreen_onboarding_paywall/view/home_page2.dart';
 
 class HomePage3 extends StatelessWidget {
-  const HomePage3({Key? key}) : super(key: key);
+  const HomePage3({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -19,18 +20,27 @@ class HomePage3 extends StatelessWidget {
                   fit: BoxFit.cover,
                 ),
               ),
-              Align(
-                alignment: Alignment.topRight,
-                child: CircleAvatar(
-                    radius: 30,
-                    child: IconButton(
+              SafeArea(
+                child: Padding(
+                  padding: const EdgeInsets.only(right: 20),
+                  child: Align(
+                    alignment: Alignment.topRight,
+                    child: CircleAvatar(
+                      radius: 25,
+                      child: IconButton(
                         onPressed: () {
                           Navigator.push(
-                              context,
-                              MaterialPageRoute(
-                                  builder: (context) => homepage2()));
+                            context,
+                            MaterialPageRoute(
+                              builder: (context) => NabbarView(),
+                            ),
+                          );
                         },
-                        icon: Icon(Icons.account_balance_wallet))),
+                        icon: Icon(Icons.close),
+                      ),
+                    ),
+                  ),
+                ),
               ),
             ],
           ),
@@ -92,32 +102,25 @@ class HomePage3 extends StatelessWidget {
           SizedBox(
             height: 35,
           ),
-          Row(
-            children: [
-              SizedBox(
-                width: 93,
-              ),
-              Container(
-                width: 300,
-                height: 43,
-                child: ElevatedButton(
-                  style: ButtonStyle(
-                    backgroundColor: MaterialStateProperty.all(Colors.amber),
-                    foregroundColor: MaterialStateProperty.all(Colors.amber),
-                  ),
-                  onPressed: () {},
-                  child: Text(
-                    'Uniock for доллар0.99',
-                    style: TextStyle(
-                      color: Colors.white,
-                    ),
+          Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 30),
+            child: SizedBox(
+              width: double.infinity,
+              height: 43,
+              child: ElevatedButton(
+                style: ButtonStyle(
+                  backgroundColor: WidgetStateProperty.all(Colors.amber),
+                  foregroundColor: WidgetStateProperty.all(Colors.amber),
+                ),
+                onPressed: () {},
+                child: Text(
+                  'Uniock for доллар0.99',
+                  style: TextStyle(
+                    color: Colors.white,
                   ),
                 ),
               ),
-              SizedBox(
-                width: 12,
-              ),
-            ],
+            ),
           ),
           SizedBox(
             height: 20,

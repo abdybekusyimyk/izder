@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:izder/src/modules/main_screen/diary_view.dart';
+import 'package:izder/src/modules/settings/view/setting_view.dart';
 import 'package:responsive_sizer/responsive_sizer.dart';
 
 class NabbarView extends StatefulWidget {
@@ -16,7 +17,7 @@ class _NabbarViewState extends State<NabbarView> {
     DiaryView(),
     SizedBox(),
     SizedBox(),
-    SizedBox(),
+    SettingView(),
   ];
 
   @override
@@ -43,7 +44,6 @@ class _NabbarViewState extends State<NabbarView> {
               icon: Icon(
                 Icons.menu_book_sharp,
                 size: 22.sp,
-                color: Color(0xff81BA48),
               ),
               label: "Diary",
             ),
@@ -51,14 +51,12 @@ class _NabbarViewState extends State<NabbarView> {
               icon: Icon(
                 Icons.favorite_border,
                 size: 22.sp,
-                color: Color(0xff81ba48),
               ),
               label: "Achievements",
             ),
             BottomNavigationBarItem(
               icon: Icon(
                 Icons.camera_alt_outlined,
-                color: Color(0xff81ba48),
                 size: 22.sp,
               ),
               label: "Challenges",
@@ -67,16 +65,14 @@ class _NabbarViewState extends State<NabbarView> {
               icon: Icon(
                 Icons.settings,
                 size: 22.sp,
-                color: Color(0xff81ba48),
               ),
               label: "settngs",
             ),
           ],
           type: BottomNavigationBarType.fixed,
           backgroundColor: Color(0xffFFFFFF),
-          selectedItemColor: Colors.white,
-          unselectedItemColor: Colors.blue,
-          showUnselectedLabels: true,
+          selectedItemColor: Colors.green,
+          unselectedItemColor: Colors.grey,
         ),
       ),
     );
