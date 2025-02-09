@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:izder/src/modules/abubakr_Emotional_momen_tadding/view/Add%20record.dart';
 import 'package:responsive_sizer/responsive_sizer.dart';
 
 class DiaryView extends StatelessWidget {
@@ -8,105 +9,114 @@ class DiaryView extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Color.fromARGB(188, 14, 185, 248),
-      // appBar: AppBar(),
-      body: SingleChildScrollView(
-        child: Column(
-          children: [
-            Padding(
-              padding: EdgeInsets.symmetric(horizontal: 3.sp),
-              child: Container(
-                width: double.infinity,
-                height: 29.h,
-                decoration: BoxDecoration(
-                  color: Color(0xffFFFFFF),
-                  borderRadius: BorderRadius.only(
-                    bottomLeft: Radius.circular(18.sp),
-                    bottomRight: Radius.circular(18.sp),
-                  ),
+      appBar: AppBar(
+        toolbarHeight: 32.h,
+        title: Container(
+          width: double.infinity,
+          height: 29.h,
+          decoration: BoxDecoration(
+            color: Color(0xffFFFFFF),
+            borderRadius: BorderRadius.only(
+              bottomLeft: Radius.circular(18.sp),
+              bottomRight: Radius.circular(18.sp),
+            ),
+          ),
+          child: Column(
+            children: [
+              Padding(
+                padding: EdgeInsets.symmetric(
+                  horizontal: 14.9.sp,
+                  vertical: 10.sp,
                 ),
-                child: Column(
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    Padding(
-                      padding: EdgeInsets.symmetric(
-                        horizontal: 14.9.sp,
-                        vertical: 10.sp,
-                      ),
-                      child: Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          Text(
-                            "Diary",
-                            style: TextStyle(
-                              color: Color(0xff131313),
-                              fontSize: 20.sp,
-                              fontWeight: FontWeight.w600,
-                            ),
-                          ),
-                          Text(
-                            "0 entries",
-                            style: TextStyle(
-                              color: Color(0xff81BA48),
-                              fontSize: 17.sp,
-                              fontWeight: FontWeight.w400,
-                            ),
-                          ),
-                        ],
+                    Text(
+                      "Diary",
+                      style: TextStyle(
+                        color: Color(0xff131313),
+                        fontSize: 20.sp,
+                        fontWeight: FontWeight.w600,
                       ),
                     ),
-                    SizedBox(height: 2.h),
-                    Row(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: [
-                        SizedBox(
-                          height: 16.h,
-                          child: Image.asset(
-                            "assets/images/Frame 823425006.png",
-                          ),
-                        ),
-                        Column(
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          children: [
-                            Text(
-                              "Add your emotional\nmoments",
-                              style: TextStyle(
-                                color: Color(0xff000000),
-                                fontSize: 17.sp,
-                              ),
-                            ),
-                            SizedBox(height: 1.3.h),
-                            Container(
-                              width: 34.w,
-                              height: 3.6.h,
-                              decoration: BoxDecoration(
-                                color: Color(0xffFFFFFF),
-                                borderRadius: BorderRadius.circular(10),
-                                boxShadow: [
-                                  BoxShadow(
-                                    color: Colors.black,
-                                    blurRadius: 2,
-                                  )
-                                ],
-                              ),
-                              child: Center(
-                                child: Text(
-                                  "Add",
-                                  style: TextStyle(
-                                    color: Color(0xff131313),
-                                    fontSize: 16.sp,
-                                    fontWeight: FontWeight.w700,
-                                  ),
-                                ),
-                              ),
-                            ),
-                          ],
-                        ),
-                      ],
+                    Text(
+                      "0 entries",
+                      style: TextStyle(
+                        color: Color(0xff81BA48),
+                        fontSize: 17.sp,
+                        fontWeight: FontWeight.w400,
+                      ),
                     ),
                   ],
                 ),
               ),
-            ),
+              SizedBox(height: 2.h),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  SizedBox(
+                    height: 16.h,
+                    child: Image.asset(
+                      "assets/images/Frame 823425006.png",
+                    ),
+                  ),
+                  Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Text(
+                        "Add your emotional\nmoments",
+                        style: TextStyle(
+                          color: Color(0xff000000),
+                          fontSize: 17.sp,
+                        ),
+                      ),
+                      SizedBox(height: 1.3.h),
+                      InkWell(
+                        onTap: () {
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                              builder: (context) => Addrecord(),
+                            ),
+                          );
+                        },
+                        child: Container(
+                          width: 34.w,
+                          height: 3.6.h,
+                          decoration: BoxDecoration(
+                            color: Color(0xffFFFFFF),
+                            borderRadius: BorderRadius.circular(10),
+                            boxShadow: [
+                              BoxShadow(
+                                color: Colors.black,
+                                blurRadius: 2,
+                              )
+                            ],
+                          ),
+                          child: Center(
+                            child: Text(
+                              "Add",
+                              style: TextStyle(
+                                color: Color(0xff131313),
+                                fontSize: 16.sp,
+                                fontWeight: FontWeight.w700,
+                              ),
+                            ),
+                          ),
+                        ),
+                      ),
+                    ],
+                  ),
+                ],
+              ),
+            ],
+          ),
+        ),
+      ),
+      body: SingleChildScrollView(
+        child: Column(
+          children: [
             SizedBox(height: 1.h),
             Padding(
               padding: EdgeInsets.symmetric(horizontal: 10),
