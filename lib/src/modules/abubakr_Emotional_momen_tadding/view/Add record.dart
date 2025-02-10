@@ -156,7 +156,7 @@ class _AddrecordState extends State<Addrecord> {
                 },
                 child: Container(
                   width: double.infinity,
-                  height: 6.5.h,
+                  height: 6.4.h,
                   decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(20.sp),
                     color: Color.fromARGB(110, 255, 255, 255),
