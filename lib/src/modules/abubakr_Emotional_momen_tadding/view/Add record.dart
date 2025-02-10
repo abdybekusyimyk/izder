@@ -50,14 +50,22 @@ class _AddrecordState extends State<Addrecord> {
       appBar: AppBar(
         backgroundColor: Color(0xffFFFFFF),
         toolbarHeight: 13.w,
+        leading: InkWell(
+          onTap: () {
+            _showAddDialog(context);
+          },
+          child: Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 20),
+            child: Icon(
+              Icons.arrow_back_ios,
+              color: Color(0xff131313),
+              size: 21.sp,
+            ),
+          ),
+        ),
         title: Center(
           child: Row(
             children: [
-              Icon(
-                Icons.arrow_back_ios,
-                color: Color(0xff131313),
-                size: 21.sp,
-              ),
               SizedBox(width: 28.w),
               Text(
                 "Add record",
@@ -90,7 +98,6 @@ class _AddrecordState extends State<Addrecord> {
             SizedBox(height: 1.h),
             Container(
               width: double.infinity,
-              height: 6.h,
               decoration: BoxDecoration(
                 color: Color(0xffffffff),
                 borderRadius: BorderRadius.circular(15),
@@ -145,13 +152,13 @@ class _AddrecordState extends State<Addrecord> {
               padding: EdgeInsets.symmetric(horizontal: 35.sp),
               child: GestureDetector(
                 onTap: () {
-                  _showAddDialog(context);
+                  // sanlanish kerak bulgan  malumotni saqlash uchun logika yozish kerak
                 },
                 child: Container(
                   width: double.infinity,
                   height: 6.5.h,
                   decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(20),
+                    borderRadius: BorderRadius.circular(20.sp),
                     color: Color.fromARGB(110, 255, 255, 255),
                   ),
                   child: Center(
