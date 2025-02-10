@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:izder/src/components/nabbar_view.dart';
-import 'package:izder/src/modules/splashscreen_onboarding_paywall/view/home_page2.dart';
+// import 'package:izder/src/modules/splashscreen_onboarding_paywall/view/home_page2.dart';
 
 class HomePage3 extends StatelessWidget {
   const HomePage3({super.key});
