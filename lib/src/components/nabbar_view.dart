@@ -14,7 +14,9 @@ class _NabbarViewState extends State<NabbarView> {
   int _currentIndex = 0;
 
   List<Widget> viewnabbar = [
-    DiaryView(),
+    DiaryView(
+      Itwassobeautifulcontroller: '',
+    ),
     SizedBox(),
     SizedBox(),
     SettingView(),
