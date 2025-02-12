@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:izder/src/components/nabbar_view.dart';
-// import 'package:izder/src/modules/Achievements/achievements.dart';
+// import 'package:izder/src/components/nabbar_view.dart';
+// import 'package:izder/src/modules/Achievements/view/samat_addrecord.dart';
+import 'package:izder/src/modules/Achievements/achievements.dart';
 // import 'package:izder/src/modules/splashscreen_onboarding_paywall/view/splash_view.dart';
 import 'package:responsive_sizer/responsive_sizer.dart';
 
@@ -14,7 +15,7 @@ class MyApp extends StatelessWidget {
         debugShowCheckedModeBanner: false,
         title: '',
         theme: ThemeData(useMaterial3: true),
-        home: NabbarView(),
+        home: Achievements(),
       ),
     );
   }
