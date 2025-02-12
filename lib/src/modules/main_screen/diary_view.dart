@@ -3,8 +3,14 @@ import 'package:izder/src/modules/abubakr_Emotional_momen_tadding/view/Add%20rec
 import 'package:responsive_sizer/responsive_sizer.dart';
 
 class DiaryView extends StatelessWidget {
-  const DiaryView({super.key});
+  const DiaryView({
+    super.key,
+    // ignore: non_constant_identifier_names
+    required this.Itwassobeautifulcontroller,
+  });
 
+  // ignore: non_constant_identifier_names
+  final String Itwassobeautifulcontroller;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -133,41 +139,60 @@ class DiaryView extends StatelessWidget {
               ),
             ),
             SizedBox(height: 1.h),
-            Container(
-              width: 86.w,
-              height: 40.h,
-              decoration: BoxDecoration(
-                borderRadius: BorderRadius.circular(15),
-                color: Color.fromARGB(104, 255, 255, 255),
-              ),
-              child: Column(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  SizedBox(
-                    height: 14.h,
-                    child: Image.asset("assets/images/Frame.png"),
-                  ),
-                  SizedBox(height: 1.h),
-                  Text(
-                    "Your journal is still empty",
-                    style: TextStyle(
-                      color: Color(0xffFFFFFF),
-                      fontSize: 19.sp,
-                      fontWeight: FontWeight.w700,
+            if (Itwassobeautifulcontroller.isEmpty)
+              Container(
+                width: 86.w,
+                height: 40.h,
+                decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(15),
+                  color: Color.fromARGB(104, 255, 255, 255),
+                ),
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    SizedBox(
+                      height: 14.h,
+                      child: Image.asset("assets/images/Frame.png"),
                     ),
-                  ),
-                  SizedBox(height: 1.h),
-                  Text(
-                    "Write down your emotions here\nand support them with photos of\n                     nevents",
+                    SizedBox(height: 1.h),
+                    Text(
+                      "Your journal is still empty",
+                      style: TextStyle(
+                        color: Color(0xffFFFFFF),
+                        fontSize: 19.sp,
+                        fontWeight: FontWeight.w700,
+                      ),
+                    ),
+                    SizedBox(height: 1.h),
+                    Text(
+                      "Write down your emotions here\nand support them with photos of\n                     events",
+                      style: TextStyle(
+                        color: Color(0xffFFFFFF),
+                        fontSize: 17.sp,
+                        fontWeight: FontWeight.w400,
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+            if (Itwassobeautifulcontroller.isNotEmpty)
+              Container(
+                width: double.infinity,
+                decoration: BoxDecoration(
+                  color: Colors.white,
+                ),
+                child: Padding(
+                  padding: EdgeInsets.all(10),
+                  child: Text(
+                    Itwassobeautifulcontroller, // Ma'lumotni shu yerda ko'rsatamiz
                     style: TextStyle(
-                      color: Color(0xffFFFFFF),
+                      color: Colors.black,
                       fontSize: 17.sp,
                       fontWeight: FontWeight.w400,
                     ),
                   ),
-                ],
+                ),
               ),
-            ),
           ],
         ),
       ),

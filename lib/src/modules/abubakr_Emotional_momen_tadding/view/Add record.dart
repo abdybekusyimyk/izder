@@ -1,10 +1,10 @@
 import 'dart:io';
-
 import 'package:flutter/material.dart';
 import 'package:image_picker/image_picker.dart';
 import 'package:izder/src/modules/abubakr_Emotional_momen_tadding/widget/button_sheet.dart';
 import 'package:izder/src/modules/abubakr_Emotional_momen_tadding/widget/shodiolog.dart';
 import 'package:responsive_sizer/responsive_sizer.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
 class Addrecord extends StatefulWidget {
   const Addrecord({super.key});
@@ -14,6 +14,8 @@ class Addrecord extends StatefulWidget {
 }
 
 class _AddrecordState extends State<Addrecord> {
+  // ignore: non_constant_identifier_names
+  TextEditingController? Itwassobeautifulcontroller = TextEditingController();
   File? _selectedImage;
 
   // ignore: unused_element
@@ -43,6 +45,32 @@ class _AddrecordState extends State<Addrecord> {
     );
   }
 
+  Future<void> getInt() async {
+    final sheret = await SharedPreferences.getInstance();
+    setState(() {
+      Itwassobeautifulcontroller!.text =
+          sheret.getString("Itwassobeautifulcontroller") ?? "";
+    });
+  }
+
+  Future<void> sheretsakta() async {
+    final shared = await SharedPreferences.getInstance();
+    shared.setString(
+        "Itwassobeautifulcontroller", Itwassobeautifulcontroller!.text);
+  }
+
+  @override
+  void initState() {
+    getInt();
+    super.initState();
+  }
+
+  @override
+  void dispose() {
+    Itwassobeautifulcontroller?.dispose();
+    super.dispose();
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -52,7 +80,11 @@ class _AddrecordState extends State<Addrecord> {
         toolbarHeight: 13.w,
         leading: InkWell(
           onTap: () {
-            _showAddDialog(context);
+            if (Itwassobeautifulcontroller!.text.isNotEmpty) {
+              _showAddDialog(context);
+            } else {
+              Navigator.pop(context);
+            }
           },
           child: Padding(
             padding: const EdgeInsets.symmetric(horizontal: 20),
@@ -103,6 +135,7 @@ class _AddrecordState extends State<Addrecord> {
                 borderRadius: BorderRadius.circular(15),
               ),
               child: TextField(
+                controller: Itwassobeautifulcontroller,
                 decoration: InputDecoration(
                   contentPadding:
                       EdgeInsetsDirectional.symmetric(horizontal: 13),
@@ -152,7 +185,8 @@ class _AddrecordState extends State<Addrecord> {
               padding: EdgeInsets.symmetric(horizontal: 35.sp),
               child: GestureDetector(
                 onTap: () {
-                  // sanlanish kerak bulgan  malumotni saqlash uchun logika yozish kerak
+                  sheretsakta();
+                  Navigator.pop(context, Itwassobeautifulcontroller!.text);
                 },
                 child: Container(
                   width: double.infinity,
