@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:izder/src/modules/Achievements/achievements.dart';
 import 'package:izder/src/modules/main_screen/diary_view.dart';
 import 'package:izder/src/modules/settings/view/setting_view.dart';
 import 'package:responsive_sizer/responsive_sizer.dart';
@@ -14,10 +15,15 @@ class _NabbarViewState extends State<NabbarView> {
   int _currentIndex = 0;
 
   List<Widget> viewnabbar = [
+
     DiaryView(
       Itwassobeautifulcontroller: '',
     ),
-    SizedBox(),
+
+
+    DiaryView(),
+    Achievements(),
+
     SizedBox(),
     SettingView(),
   ];
