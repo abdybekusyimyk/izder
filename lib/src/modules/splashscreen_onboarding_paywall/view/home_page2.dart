@@ -2,8 +2,8 @@ import 'package:flutter/material.dart';
 // import 'package:izder/src/modules/splashscreen_onboarding_paywall/home_page.dart';
 import 'package:izder/src/modules/splashscreen_onboarding_paywall/home_page3.dart';
 
-class homepage2 extends StatelessWidget {
-  const homepage2({Key? key}) : super(key: key);
+class Homepage2 extends StatelessWidget {
+  const Homepage2({Key? key}) : super(key: key);
   @override
   Widget build(BuildContext context) {
     return Scaffold(

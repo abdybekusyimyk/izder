@@ -48,7 +48,7 @@ class HomePage extends StatelessWidget {
               ),
               onPressed: () {
                 Navigator.push(context,
-                    MaterialPageRoute(builder: (context) => homepage2()));
+                    MaterialPageRoute(builder: (context) => Homepage2()));
               },
               child: Text('countnue'),
             ),
